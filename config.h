@@ -107,7 +107,7 @@ static const char *colorname[] = {
     [5] = "#ff79c6", /* magenta */
     [6] = "#8be9fd", /* cyan    */
     [7] = "#bbbbbb", /* white   */
-                                  
+
     /* 8 bright colors */
     [8]  = "#44475a", /* black   */
     [9]  = "#ff5555", /* red     */
@@ -117,11 +117,13 @@ static const char *colorname[] = {
     [13] = "#ff79c6", /* magenta */
     [14] = "#8be9fd", /* cyan    */
     [15] = "#ffffff", /* white   */
-                                   
+
+    /* privte define color */
+    [101] = "#7755ee",
+
     /* special colors */
     [256] = "#282a36", /* background */
     [257] = "#f8f8f2", /* foreground */
-
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
@@ -136,8 +138,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
-unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 257;
+unsigned int defaultcs = 5;
+static unsigned int defaultrcs = 5;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
@@ -226,11 +228,11 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ MODKEY,            	XK_l,     	copyurl,      	{.i =  0} },
-	{ MODKEY,            	XK_e,     	kscrollup,      {.i =  1} },
-	{ MODKEY,            	XK_u,   	kscrolldown,    {.i =  1} },
-	{ MODKEY|ControlMask,	XK_e,     	kscrollup,      {.i = -1} },
-	{ MODKEY|ControlMask,	XK_u,   	kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_l,           copyurl,        {.i =  0} },
+	{ MODKEY,               XK_e,           kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_u,           kscrolldown,    {.i =  1} },
+	{ MODKEY|ControlMask,   XK_e,           kscrollup,      {.i = -1} },
+	{ MODKEY|ControlMask,   XK_u,           kscrolldown,    {.i = -1} },
 };
 
 /*
