@@ -140,8 +140,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
-unsigned int defaultcs = 5;
-static unsigned int defaultrcs = 5;
+unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 15;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
@@ -158,7 +158,7 @@ unsigned int defaultunderline = 7;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
@@ -231,10 +231,8 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_l,           copyurl,        {.i =  0} },
-	{ MODKEY,               XK_e,           kscrollup,      {.i =  1} },
-	{ MODKEY,               XK_u,           kscrolldown,    {.i =  1} },
-	{ MODKEY|ControlMask,   XK_e,           kscrollup,      {.i = -1} },
-	{ MODKEY|ControlMask,   XK_u,           kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
 };
 
 /*
